@@ -10,6 +10,9 @@ import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import Entries from './components/Entries/Entries'
+import CreateEntry from './components/CreateEntry/CreateEntry'
+import ShowEntry from './components/ShowEntry/ShowEntry'
+import UpdateEntry from './components/UpdateEntry/UpdateEntry'
 
 class App extends Component {
   constructor (props) {
@@ -66,8 +69,17 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
-          <Route path='/entries' render={() => (
-            <Entries />
+          <Route exact path='/entries' render={() => (
+            <Entries msgAlert={this.msgAlert} />
+          )} />
+          <AuthenticatedRoute user={user} path='/create-entry' render={() => (
+            <CreateEntry msgAlert={this.msgAlert} user={user} />
+          )} />
+          <Route exact path='/entries/:id' render={() => (
+            <ShowEntry msgAlert={this.msgAlert} />
+          )} />
+          <AuthenticatedRoute user={user} path='/entries/:id' render={() => (
+            <UpdateEntry msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
       </Fragment>
