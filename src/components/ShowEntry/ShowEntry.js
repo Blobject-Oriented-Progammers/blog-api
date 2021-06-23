@@ -1,10 +1,4 @@
 import React, { Component, Fragment } from 'react'
-// withRouter is a function that we use when exporting components
-// that need to have access to the routing props
-// If we use `component={MyComponent}` syntax, this isn't necessary
-// because the props the passed automagically
-// HOWEVER is we use `render={() => (<MyComponent/>)}`
-// we lose those automagical props! The solution is exporting the component withRouter
 import { withRouter, Link } from 'react-router-dom'
 import { showEntry, deleteEntry } from '../../api/entries'
 // import messages from '../AutoDismissAlert/messages'
@@ -17,41 +11,36 @@ class ShowEntry extends Component {
     }
   }
   componentDidMount () {
-    // Because we used withRouter we have access to the match object
-    // which contains our URL params from the route `/movies/:id`
-    // When we go to `/movies/5` the params object will have `{ id: 5 }`
     const { user, match, msgAlert } = this.props
     showEntry(match.params.id, user)
       .then(res => {
         console.log(res)
-        this.setState({ movie: res.data.movie })
+        this.setState({ entry: res.data.entry })
       })
       .then(() => msgAlert({
-        heading: 'Movie Found Successfully',
-        message: 'messages.movieShowSuccess',
+        heading: 'Entry Found Successfully',
+        message: 'messages.entryShowSuccess',
         variant: 'success'
       }))
       .catch(() => msgAlert({
-        heading: 'Movie Could Not Be Found',
-        message: 'messages.movieShowFailure',
+        heading: 'Entry Could Not Be Found',
+        message: 'messages.entryShowFailure',
         variant: 'danger'
       }))
   }
 
   handleDelete = (event) => {
-    // We can extract the history object because we're using `withRouter`
     const { user, match, history, msgAlert } = this.props
     deleteEntry(match.params.id, user)
-      // Send the user to the movies index page
       .then(() => history.push('/entries'))
       .then(() => msgAlert({
-        heading: 'Movie Deleted!',
-        message: 'messages.movieDeleteSuccess',
+        heading: 'Entry Deleted!',
+        message: 'messages.entryDeleteSuccess',
         variant: 'success'
       }))
       .catch(() => msgAlert({
-        heading: 'Movie Delete Failed',
-        message: 'messages.movieDeleteFailure',
+        heading: 'Entry Delete Failed',
+        message: 'messages.entryDeleteFailure',
         variant: 'danger'
       }))
   }
