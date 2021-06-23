@@ -42,6 +42,7 @@ class Entries extends Component {
     // Pattern: define a variable for our JSX
     // & set it's value to be different things
     // based on our data/state of our app etc.
+    console.log('this.state.entries: ', this.state.entries)
     let entriesJsx = ''
     // First, check if movies is `null` (the inital value)
     if (this.state.entries === null) {
