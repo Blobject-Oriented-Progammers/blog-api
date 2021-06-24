@@ -7,11 +7,13 @@ class ShowEntry extends Component {
   constructor () {
     super()
     this.state = {
-      entries: null
+      entry: null,
+      user: null
     }
   }
   componentDidMount () {
     const { user, match, msgAlert } = this.props
+    console.log('this.props, showEntry: ', this.props)
     showEntry(match.params.id, user)
       .then(res => {
         console.log(res)
@@ -46,10 +48,12 @@ class ShowEntry extends Component {
   }
   render () {
     const { entry } = this.state
+    const { user } = this.props
+    console.log('this.props, render: ', this.props)
     let entryJsx = ''
     if (entry === null || entry === undefined) {
       entryJsx = 'Loading...'
-    } else {
+    } else if (user === null) {
       entryJsx = (
         <Fragment>
           <div>
@@ -57,8 +61,19 @@ class ShowEntry extends Component {
             <p>{entry.text}</p>
             {/* add a user ex; written by: entry.author */}
             {/* <p>Directed by: {entry.director}</p> */}
-            <button onClick={this.handleDelete}>Delete Entry</button>
-            <Link to={`/entries/${this.props.match.params.id}/edit`}>Update Entries</Link>
+          </div>
+        </Fragment>
+      )
+    } else {
+      entryJsx = (
+
+        <Fragment>
+          <div>
+            <h3>{entry.title}</h3>
+            <p>{entry.text}</p>
+            {/* add a user ex; written by: entry.author */}
+            {/* <p>Directed by: {entry.director}</p> */}
+            <div><button onClick={this.handleDelete}>Delete Entry</button><Link to={`/entries/${this.props.match.params.id}/edit`}>Update Entries</Link></div>
           </div>
         </Fragment>
       )

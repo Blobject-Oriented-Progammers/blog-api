@@ -33,6 +33,7 @@ class EntryCreate extends Component {
 
     const { msgAlert, user } = this.props
     const entry = { ...this.state.entry, owner: user._id }
+    console.log('this.props, createEntry: ', this.props)
     createEntry(entry, user)
       .then(res => this.setState({ createdId: res.data.entry._id }))
       .then(() => msgAlert({

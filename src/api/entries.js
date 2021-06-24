@@ -28,9 +28,9 @@ export const createEntry = (data, user) => {
   })
 }
 
-export const deleteEntry = (user) => {
+export const deleteEntry = (id, user) => {
   return axios({
-    url: apiUrl + '/entries',
+    url: apiUrl + '/entries/' + id,
     method: 'DELETE',
     headers: {
       'Authorization': `Bearer ${user.token}`
