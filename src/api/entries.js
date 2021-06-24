@@ -20,9 +20,11 @@ export const createEntry = (data, user) => {
     url: apiUrl + '/create-entry',
     method: 'POST',
     headers: {
-      'Authorization': `Token token=${user.token}`
+      'Authorization': `Bearer ${user.token}`
     },
-    data: data
+    data: {
+      entry: data
+    }
   })
 }
 
@@ -31,7 +33,7 @@ export const deleteEntry = (user) => {
     url: apiUrl + '/entries',
     method: 'DELETE',
     headers: {
-      'Authorization': `Token token=${user.token}`
+      'Authorization': `Bearer ${user.token}`
     }
   })
 }
@@ -41,7 +43,7 @@ export const updateEntry = (id, data, user) => {
     url: apiUrl + '/entries/' + id,
     method: 'PATCH',
     headers: {
-      'Authorization': `Token token=${user.token}`
+      'Authorization': `Bearer ${user.token}`
     },
     data: data
   })
