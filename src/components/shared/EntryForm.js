@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button'
 const EntryForm = ({ handleChange, handleSubmit, entry }) => (
   <Form onSubmit={handleSubmit}>
     <Form.Group controlId="title">
-      <Form.Label>Entry Title</Form.Label>
+      <Form.Label></Form.Label>
       <Form.Control
         type="text"
         name="title"
@@ -17,10 +17,10 @@ const EntryForm = ({ handleChange, handleSubmit, entry }) => (
       />
     </Form.Group>
     <Form.Group controlId="text">
-      <Form.Label>Entry Title</Form.Label>
+      <Form.Label></Form.Label>
       <Form.Control
         type="text"
-        name="entry"
+        name="text"
         value={entry.text || ''}
         placeholder="Entry Text Goes Here"
         onChange={handleChange}
