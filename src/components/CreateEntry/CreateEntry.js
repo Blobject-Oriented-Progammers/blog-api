@@ -30,8 +30,10 @@ class EntryCreate extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    console.log('event in handleSubmit: ', event)
 
     const { msgAlert, user } = this.props
+    console.log('user in handleSubmit: ', user)
 
     createEntry(this.state.entry, user)
       .then(res => this.setState({ createdId: res.data.entry._id }))
@@ -56,9 +58,9 @@ class EntryCreate extends Component {
       <Fragment>
         <h2>Create an Entry Page</h2>
         <EntryForm
-          entry={this.state.entry}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          entry={this.state.entry}
         />
       </Fragment>
     )
