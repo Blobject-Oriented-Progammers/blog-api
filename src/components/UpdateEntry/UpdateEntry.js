@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import EntryForm from '../shared/EntryForm'
 import { updateEntry, showEntry } from '../../api/entries'
-// import messages from '../AutoDismissAlert/messages'
+import messages from '../AutoDismissAlert/messages'
 
 class EntryUpdate extends Component {
   constructor () {
@@ -23,12 +23,12 @@ class EntryUpdate extends Component {
       })
       .then(() => msgAlert({
         heading: 'Entry Found Successfully',
-        message: 'messages.entryUpdatedSuccess',
+        message: messages.entryUpdatedSuccess,
         variant: 'success'
       }))
       .catch(() => msgAlert({
         heading: 'Entry Could Not Be Found',
-        message: 'messages.entryUpdatedFailure',
+        message: messages.entryUpdatedFailure,
         variant: 'danger'
       }))
   }
@@ -41,6 +41,7 @@ class EntryUpdate extends Component {
       } }
     })
   }
+
   handleSubmit = (event) => {
     event.preventDefault()
     const { msgAlert, user, match, history } = this.props
@@ -48,12 +49,12 @@ class EntryUpdate extends Component {
       .then(res => history.push(`/entries/${match.params.id}`))
       .then(() => msgAlert({
         heading: 'Update Entry Success!',
-        message: 'messages.entryUpdateSuccess',
+        message: messages.entryUpdateSuccess,
         variant: 'success'
       }))
       .catch(() => msgAlert({
         heading: 'Update Entry Failed',
-        message: 'messages.entryUpdateFailure',
+        message: messages.entryUpdateFailure,
         variant: 'danger'
       }))
   }

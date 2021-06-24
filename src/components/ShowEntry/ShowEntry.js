@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import { showEntry, deleteEntry } from '../../api/entries'
-// import messages from '../AutoDismissAlert/messages'
+import messages from '../AutoDismissAlert/messages'
 
 class ShowEntry extends Component {
   constructor () {
@@ -19,12 +19,12 @@ class ShowEntry extends Component {
       })
       .then(() => msgAlert({
         heading: 'Entry Found Successfully',
-        message: 'messages.entryShowSuccess',
+        message: messages.entryShowSuccess,
         variant: 'success'
       }))
       .catch(() => msgAlert({
         heading: 'Entry Could Not Be Found',
-        message: 'messages.entryShowFailure',
+        message: messages.entryShowFailure,
         variant: 'danger'
       }))
   }
@@ -35,12 +35,12 @@ class ShowEntry extends Component {
       .then(() => history.push('/entries'))
       .then(() => msgAlert({
         heading: 'Entry Deleted!',
-        message: 'messages.entryDeleteSuccess',
+        message: messages.entryDeleteSuccess,
         variant: 'success'
       }))
       .catch(() => msgAlert({
         heading: 'Entry Delete Failed',
-        message: 'messages.entryDeleteFailure',
+        message: messages.entryDeleteFailure,
         variant: 'danger'
       }))
   }

@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Redirect } from 'react-router-dom'
 import EntryForm from '../shared/EntryForm'
 import { createEntry } from '../../api/entries'
-// import messages from '../AutoDismissAlert/messages'
+import messages from '../AutoDismissAlert/messages'
 
 class EntryCreate extends Component {
   constructor () {
@@ -37,12 +37,12 @@ class EntryCreate extends Component {
       .then(res => this.setState({ createdId: res.data.entry._id }))
       .then(() => msgAlert({
         heading: 'Create Entry Success!',
-        message: 'messages.entryCreateSuccess',
+        message: messages.entryCreateSuccess,
         variant: 'success'
       }))
       .catch(() => msgAlert({
         heading: 'Create Entry Failed',
-        message: 'messages.entryCreateFailure',
+        message: messages.entryCreateFailure,
         variant: 'danger'
       }))
   }
