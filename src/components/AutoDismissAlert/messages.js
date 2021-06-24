@@ -5,5 +5,13 @@ export default {
   signInFailure: 'Failed to sign in. Check your email and password and try again.',
   signOutSuccess: 'Come back soon!',
   changePasswordSuccess: 'Password changed successfully!',
-  changePasswordFailure: 'Failed to change passwords. Check your old password and try again.'
+  changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
+  entryCreateSuccess: 'Entry Created!',
+  entryCreateFailure: 'Entry did not create successfully',
+  entryShowSuccess: 'Entry Succesfully Found!',
+  entryShowFailure: 'Did not find entry',
+  entryDeleteSuccess: 'Entry has been deleted!',
+  entryDeleteFailure: 'Entry not deleted',
+  entryUpdateSuccess: 'Entry Updated Succesfully',
+  entryUpdateFailure: 'Entry did not update'
 }
