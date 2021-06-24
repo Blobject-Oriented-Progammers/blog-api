@@ -16,8 +16,8 @@ const EntryForm = ({ handleChange, handleSubmit, entry }) => (
         required
       />
     </Form.Group>
-    <Form.Group controlId="entry">
-      <Form.Label>Movie Director</Form.Label>
+    <Form.Group controlId="text">
+      <Form.Label>Entry Title</Form.Label>
       <Form.Control
         type="text"
         name="entry"
