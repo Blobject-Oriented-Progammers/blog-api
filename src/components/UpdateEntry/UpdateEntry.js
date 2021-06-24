@@ -23,12 +23,12 @@ class EntryUpdate extends Component {
       })
       .then(() => msgAlert({
         heading: 'Entry Found Successfully',
-        message: 'messages.entryShowSuccess',
+        message: 'messages.entryUpdatedSuccess',
         variant: 'success'
       }))
       .catch(() => msgAlert({
         heading: 'Entry Could Not Be Found',
-        message: 'messages.entryShowFailure',
+        message: 'messages.entryUpdatedFailure',
         variant: 'danger'
       }))
   }
