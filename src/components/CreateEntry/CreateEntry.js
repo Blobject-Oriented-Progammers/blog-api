@@ -32,8 +32,8 @@ class EntryCreate extends Component {
     event.preventDefault()
 
     const { msgAlert, user } = this.props
-
-    createEntry(this.state.entry, user)
+    const entry = { ...this.state.entry, owner: user._id }
+    createEntry(entry, user)
       .then(res => this.setState({ createdId: res.data.entry._id }))
       .then(() => msgAlert({
         heading: 'Create Entry Success!',

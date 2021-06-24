@@ -47,16 +47,19 @@ class ShowEntry extends Component {
   render () {
     const { entry } = this.state
     let entryJsx = ''
-    if (entry === null) {
+    if (entry === null || entry === undefined) {
       entryJsx = 'Loading...'
     } else {
       entryJsx = (
         <Fragment>
-          <h3>{entry.title}</h3>
-          {/* add a user ex; written by: entry.author */}
-          {/* <p>Directed by: {entry.director}</p> */}
-          <button onClick={this.handleDelete}>Delete Entry</button>
-          <Link to={`/entries/${this.props.match.params.id}/edit`}>Update Entries</Link>
+          <div>
+            <h3>{entry.title}</h3>
+            <p>{entry.text}</p>
+            {/* add a user ex; written by: entry.author */}
+            {/* <p>Directed by: {entry.director}</p> */}
+            <button onClick={this.handleDelete}>Delete Entry</button>
+            <Link to={`/entries/${this.props.match.params.id}/edit`}>Update Entries</Link>
+          </div>
         </Fragment>
       )
     }
