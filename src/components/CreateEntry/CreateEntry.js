@@ -19,7 +19,7 @@ class EntryCreate extends Component {
 
   handleChange = (event) => {
     const updatedField = { [event.target.name]: event.target.value }
-
+    console.log('updatedField in createEntry handleChange: ', updatedField)
     this.setState((currentState) => {
       return { entry: {
         ...currentState.entry,

@@ -38,13 +38,13 @@ export const deleteEntry = (user) => {
   })
 }
 
-export const updateEntry = (id, data, user) => {
+export const updateEntry = (data, id, user) => {
   return axios({
     url: apiUrl + '/entries/' + id,
     method: 'PATCH',
     headers: {
       'Authorization': `Bearer ${user.token}`
     },
-    data: data
+    data: { entry: data }
   })
 }

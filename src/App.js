@@ -78,7 +78,7 @@ class App extends Component {
           <Route exact path='/entries/:id' render={() => (
             <ShowEntry msgAlert={this.msgAlert} />
           )} />
-          <AuthenticatedRoute user={user} path='/entries/:id' render={() => (
+          <AuthenticatedRoute user={user} exact path='/entries/:id' render={() => (
             <UpdateEntry msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
