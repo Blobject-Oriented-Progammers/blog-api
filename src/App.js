@@ -75,21 +75,9 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/create-entry' render={() => (
             <CreateEntry msgAlert={this.msgAlert} user={user} />
           )} />
-          <Route exact path='/entries/:id' user={user} render={(props) => {
-            console.log(props)
-            const entryId = props.match.params.id
-            const selectedEntry = Entries.this.state.entries.find(entry => entry.id.toString() === entryId)
-            return (
-              <ShowEntry
-                id={entryId}
-                title={selectedEntry.title}
-                entry={selectedEntry.entry}
-                comments={selectedEntry.comments}
-                msgAlert={this.msgAlert} user={user}
-              />
-            )
-          }}
-          />
+          <Route exact path='/entries/:id' user={user} render={() => (
+            <ShowEntry msgAlert={this.msgAlert} user={user}/>
+          )} />
           <AuthenticatedRoute user={user} exact path='/entries/:id/edit' render={() => (
             <UpdateEntry msgAlert={this.msgAlert} user={user} />
           )} />
