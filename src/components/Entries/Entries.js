@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import Spinner from 'react-bootstrap/Spinner'
 import { indexEntries } from '../../api/entries'
+import Comment from './../Comment/Comments'
 // import messages from '../AutoDismissAlert/messages'
 
 class Entries extends Component {
@@ -37,10 +38,19 @@ class Entries extends Component {
           {this.state.entries.map((entry, i) => (
             <li key={entry._id}><Link to={`/entries/${entry._id}`}>{entry.title}</Link></li>
           ))}
+          <p>Comments:</p>
+          <ul>
+            {this.props.comments.map(comment => (
+              <Comment
+                key={comment.content}
+                content={comment.content}
+                author={comment.author}
+              />
+            ))}
+          </ul>
         </ul>
       )
     }
-
     return (
       <Fragment>
         <h2>Entries Index Page</h2>
