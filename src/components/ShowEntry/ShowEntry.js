@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import { showEntry, deleteEntry } from '../../api/entries'
 import messages from '../AutoDismissAlert/messages'
+import Comment from './../Comment/Comments'
 
 class ShowEntry extends Component {
   constructor () {
@@ -71,6 +72,16 @@ class ShowEntry extends Component {
           <div>
             <h3>{entry.title}</h3>
             <p>{entry.text}</p>
+            <p>Comments:</p>
+            <ul>
+              {entry.comments.map(comment => (
+                <Comment
+                  key={comment.content}
+                  content={comment.content}
+                  author={comment.author}
+                />
+              ))}
+            </ul>
             {/* add a user ex; written by: entry.author */}
             {/* <p>Directed by: {entry.director}</p> */}
             <div><button onClick={this.handleDelete}>Delete Entry</button><Link to={`/entries/${this.props.match.params.id}/edit`}>Update Entries</Link></div>
