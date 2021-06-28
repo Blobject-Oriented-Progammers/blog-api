@@ -17,7 +17,8 @@ class DeleteComment extends Component {
       deleteComment(entryId, id, user)
         .then((res) => console.log('handleDelete res: ', res))
         .catch(() => console.log('DELETE COMMENT FAILED'))
-        .finally(() => history.push('/'))
+        .finally(() => history.push('/temp'))
+        .finally(() => history.goBack())
     }
 
     render () {
