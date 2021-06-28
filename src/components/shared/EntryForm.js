@@ -26,7 +26,9 @@ const EntryForm = ({ handleChange, handleSubmit, entry }) => (
         required
       />
     </Form.Group>
-    <Button type="submit">Create Entry</Button>
+    <div className="createButton">
+      <Button type="submit">Create Entry</Button>
+    </div>
   </Form>
 )
 
