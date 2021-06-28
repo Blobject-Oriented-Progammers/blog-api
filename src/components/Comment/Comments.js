@@ -56,7 +56,7 @@ class Comments extends Component {
 
     return (
       <Fragment>
-        <li>{content} by {author}</li>
+        <li>{content}  {author}</li>
       </Fragment>
     )
   }
