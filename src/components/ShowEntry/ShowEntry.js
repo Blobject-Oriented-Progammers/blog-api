@@ -2,8 +2,9 @@ import React, { Component, Fragment } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import { showEntry, deleteEntry } from '../../api/entries'
 import messages from '../AutoDismissAlert/messages'
-import Comment from './../Comment/Comments'
+// import Comment from './../Comment/Comments'
 import CommentForm from '../shared/CommentForm'
+import DeleteComment from '../Comment/DeleteComment'
 import { createComment } from '../../api/comments'
 
 class ShowEntry extends Component {
@@ -18,15 +19,18 @@ class ShowEntry extends Component {
         owner: ''
       },
       // why are we setting createdId - line 65 setstate
-      createdId: null
+      createdId: null,
+      commentId: ''
     }
   }
   componentDidMount () {
     const { user, match, msgAlert } = this.props
     console.log('this.props, showEntry: ', this.props)
+    console.log('this.props.match.params.id: ', this.props.match.params.id)
+    console.log('this.props, comment.owner: ', this.state.comment.owner)
     showEntry(match.params.id, user)
       .then(res => {
-        console.log(res)
+        console.log('componentDidMount res: ', res)
         this.setState({ entry: res.data.entry })
       })
       .then(() => msgAlert({
@@ -89,6 +93,22 @@ class ShowEntry extends Component {
         variant: 'danger'
       }))
   }
+
+  handleDeleteComment = (event) => {
+    const { user, match, msgAlert } = this.props
+    deleteEntry(match.params.id, user)
+      .then(() => msgAlert({
+        heading: 'Comment Deleted!',
+        message: messages.entryDeleteSuccess,
+        variant: 'success'
+      }))
+      .catch(() => msgAlert({
+        heading: 'Comment Delete Failed',
+        message: messages.entryDeleteFailure,
+        variant: 'danger'
+      }))
+  }
+
   render () {
     const { entry } = this.state
     const { user } = this.props
@@ -118,12 +138,13 @@ class ShowEntry extends Component {
             <p>{entry.text}</p>
             <p>Comments:</p>
             <ul>
-              {entry.comments.map((comment, i) => (
-                <Comment
-                  key={i}
-                  content={comment.content}
-                  author={comment.author}
-                />
+              {entry.comments.map((comment) => (
+                <li key={comment._id}>{comment.content}
+                  {console.log('comment: ', comment._id)}
+                  <div>
+                    <DeleteComment id={comment._id} user={this.props.user._id} entryId={this.props.match.params.id} />
+                  </div>
+                </li>
               ))}
             </ul>
             {/* add a user ex; written by: entry.author */}
@@ -152,3 +173,6 @@ class ShowEntry extends Component {
 }
 
 export default withRouter(ShowEntry)
+
+// <li key={comment._id}><Link to={`/entries/${entry._id.comments._id}`}>{comment}</Link></li>
+// <button onClick={this.handleDeleteComment} id={comment._id}>Delete Comment</button>
