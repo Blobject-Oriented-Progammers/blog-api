@@ -60,7 +60,7 @@ class Entries extends Component {
 
     return (
       <Fragment>
-        <h2 style={entryTitleStyle}>Entries Index Page</h2>
+        <h2 style={entryTitleStyle}>All Entries</h2>
         {entriesJsx}
 
       </Fragment>

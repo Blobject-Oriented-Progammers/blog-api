@@ -14,7 +14,7 @@ ul {
 }
 
 body {
-  background-color: #e2e2e2;
+  background-color: white;
 }
 
 a {
@@ -39,5 +39,22 @@ a:hover {
   background-color: #2D50A2;
 }
 
+.mp {
+  background-color: #174D64;
+  height: 100%;
+  width: 100%;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  background-color: #e2e2e2;
+  max-width: 2000px;
+}
+
+.container .mp {
+  background-color: #174D64;
+}
 // #e2e2e2
 // #fb3640
