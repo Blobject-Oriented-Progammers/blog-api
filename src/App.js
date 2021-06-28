@@ -82,6 +82,18 @@ class App extends Component {
             <UpdateEntry msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
+        <div>
+          <h1> Welcome to Blob-ject Oriented Programmers Project! </h1>
+          <h3> The Crew </h3>
+          <ul>
+            <li> Scrum Master - Nabila Ayaba! </li>
+            <li> Front End Lead - JT Shepherd! </li>
+            <li> Back End Lead - Dylon Fleming! </li>
+          </ul>
+          <p>
+          Take a look at posts made already in the top right (Entries), or go ahead and sign in to make your own!
+          </p>
+        </div>
       </Fragment>
     )
   }
