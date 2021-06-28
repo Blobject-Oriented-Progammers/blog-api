@@ -25,12 +25,8 @@ class ShowEntry extends Component {
   }
   componentDidMount () {
     const { user, match, msgAlert } = this.props
-    console.log('this.props, showEntry: ', this.props)
-    console.log('this.props.match.params.id: ', this.props.match.params.id)
-    console.log('this.props, comment.owner: ', this.state.comment.owner)
     showEntry(match.params.id, user)
       .then(res => {
-        console.log('componentDidMount res: ', res)
         this.setState({ entry: res.data.entry })
       })
       .then(() => msgAlert({
@@ -47,7 +43,6 @@ class ShowEntry extends Component {
 
   handleChange = (event) => {
     const updatedField = { [event.target.name]: event.target.value }
-    console.log('updatedField in createEntry handleChange: ', updatedField)
     this.setState((currentState) => {
       return { comment: {
         ...currentState.comment,
@@ -57,7 +52,6 @@ class ShowEntry extends Component {
   }
 
   handleSubmit = (event) => {
-    console.log('event in handleSubmit: ', event)
     event.preventDefault()
 
     const { msgAlert, user } = this.props
@@ -118,7 +112,7 @@ class ShowEntry extends Component {
     } else if (user === null) {
       entryJsx = (
         <Fragment>
-          <div>
+          <div className='showPostComment'>
             <h3>{entry.title}</h3>
             <p>{entry.text}</p>
             {/* add a user ex; written by: entry.author */}
@@ -133,14 +127,13 @@ class ShowEntry extends Component {
       entryJsx = (
 
         <Fragment>
-          <div>
+          <div className='showPostComment'>
             <h3>{entry.title}</h3>
             <p>{entry.text}</p>
             <p>Comments:</p>
             <ul>
               {entry.comments.map((comment) => (
                 <li key={comment._id}>{comment.content}
-                  {console.log('comment: ', comment._id)}
                   <div>
                     <DeleteComment id={comment._id} user={this.props.user._id} entryId={this.props.match.params.id} />
                   </div>
@@ -165,7 +158,6 @@ class ShowEntry extends Component {
 
     return (
       <Fragment>
-        <h2>Just One Entry Page</h2>
         {entryJsx}
       </Fragment>
     )
