@@ -87,13 +87,13 @@ class App extends Component {
             <h3 className='mp-crew-title'>The Crew</h3>
             <ul className='mp-crew col-sm-10 col-md-8 mx-auto mt-5'>
               <section>
-                <li className='mp-members'> Scrum Master <br/> <img src="Nabila-pic.png"/><br/>Nabila Ayaba</li>
+                <li className='mp-members'> Scrum Master <br/> <img className="crew-img" src="Nabila-pic.png"/><br/>Nabila Ayaba</li>
               </section>
               <section>
-                <li className='mp-members'> Front End Lead <br/> <img src="public/JT-pic.JPG"/> <br/>JT Shepherd</li>
+                <li className='mp-members'> Front End Lead <br/> <img className="crew-img" src="JT-pic.JPG"/> <br/>JT Shepherd</li>
               </section>
               <section>
-                <li className='mp-members'>Back End Lead<br/> <img src="public/Dylon-pic.png"/> <br/>Dylon Fleming</li>
+                <li className='mp-members'>Back End Lead<br/> <img className="crew-img" src="Dylon-pic.png"/> <br/>Dylon Fleming</li>
               </section>
             </ul>
             <p className='mp-p'>
