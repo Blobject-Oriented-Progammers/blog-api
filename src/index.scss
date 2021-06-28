@@ -1,5 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
 
+
+html {
+  min-width: 100%;
+  min-height: 100%;
+}
+
 ul {
   padding: 0;
   width: 75%;
@@ -9,8 +15,20 @@ ul {
   margin: auto;
 }
 
+hr {
+  background-color: white;
+  width: 75%;
+}
+
+.crew-img {
+  height: 200px;
+}
+
 .bg-primary {
   background-color: #605F5E !important;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 body {
@@ -40,9 +58,6 @@ a:hover {
 }
 
 .mp {
-  background-color: #174D64;
-  height: 100%;
-  width: 100%;
   color: white;
   padding: 20px;
   text-align: center;
@@ -51,10 +66,26 @@ a:hover {
 .container {
   background-color: #e2e2e2;
   max-width: 2000px;
+  min-height: 100%;
+  width: 100%;
+  padding: 56px 0 0 0;
 }
 
 .container .mp {
-  background-color: #174D64;
+  background-color: #6798ad;
+  height: 100vh;
+}
+
+.mp-crew-title {
+  margin-top: 10px;
+}
+
+.mp-crew {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin: 100px;
+  list-style-type: none;
 }
 
 .showPostComment {

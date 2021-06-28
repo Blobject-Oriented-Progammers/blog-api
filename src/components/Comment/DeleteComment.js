@@ -10,8 +10,8 @@ class DeleteComment extends Component {
     handleDelete = (event) => {
       const { user, history, id, entryId } = this.props
       deleteComment(entryId, id, user)
-        .then()
-        .catch()
+        .then((res) => res)
+        .catch(console.error)
         .finally(() => history.push('/'))
     }
 
