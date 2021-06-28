@@ -53,9 +53,16 @@ class EntryCreate extends Component {
       return <Redirect to={`/entries/${this.state.createdId}`}/>
     }
 
+    const createTitleStyle = {
+      color: 'red',
+      textAlign: 'center',
+      padding: '10px',
+      margin: '10px'
+    }
+
     return (
       <Fragment>
-        <h2>Create an Entry Page</h2>
+        <h2 style={createTitleStyle}>Create an Entry Page</h2>
         <EntryForm
           entry={this.state.entry}
           handleChange={this.handleChange}

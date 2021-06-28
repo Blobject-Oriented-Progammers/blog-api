@@ -1,1 +1,43 @@
 @import '~bootstrap/scss/bootstrap';
+
+ul {
+  padding: 0;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+}
+
+.bg-primary {
+  background-color: #605F5E !important;
+}
+
+body {
+  background-color: #e2e2e2;
+}
+
+a {
+  color: black;
+  padding: 10px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.form-group {
+  margin: 30px 0 30px 0;
+}
+
+.signUpButton, .signInButton, .createButton{
+  display: flex;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: #2D50A2;
+}
+
+// #e2e2e2
+// #fb3640

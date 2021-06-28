@@ -131,7 +131,9 @@ class ShowEntry extends Component {
               handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}
             />
-            <div><button onClick={this.handleDelete}>Delete Entry</button><Link to={`/entries/${this.props.match.params.id}/edit`}>Update Entries</Link></div>
+            <div>
+              <button className='btn btn-primary' onClick={this.handleDelete}>Delete Entry</button>
+              <Link to={`/entries/${this.props.match.params.id}/edit`}>Update Entries</Link></div>
           </div>
         </Fragment>
       )

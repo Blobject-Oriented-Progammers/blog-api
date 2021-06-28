@@ -26,6 +26,22 @@ class Entries extends Component {
   }
 
   render () {
+    const entryTextStyle = {
+      margin: '20px',
+      color: '#fb3640',
+      listStyleType: 'none',
+      padding: '10px',
+      backgroundColor: 'white',
+      border: '1px solid #ced4da',
+      borderRadius: '0.25rem'
+    }
+
+    const entryTitleStyle = {
+      textAlign: 'center',
+      margin: '20px',
+      color: '#fb3640'
+    }
+
     console.log('this.state.entries: ', this.state.entries)
     let entriesJsx = ''
     if (this.state.entries === null) {
@@ -36,15 +52,17 @@ class Entries extends Component {
       entriesJsx = (
         <ul>
           {this.state.entries.map((entry, i) => (
-            <li key={entry._id}><Link to={`/entries/${entry._id}`}>{entry.title}</Link></li>
+            <li style={entryTextStyle} key={entry._id}><Link to={`/entries/${entry._id}`}>{entry.title}</Link></li>
           ))}
         </ul>
       )
     }
+
     return (
       <Fragment>
-        <h2>Entries Index Page</h2>
+        <h2 style={entryTitleStyle}>Entries Index Page</h2>
         {entriesJsx}
+
       </Fragment>
     )
   }
@@ -55,5 +73,8 @@ class Entries extends Component {
 //   message: 'messages.entryIndexFailure',
 //   variant: 'danger'
 // })
+
+// #e2e2e2
+// #fb3640
 
 export default Entries
