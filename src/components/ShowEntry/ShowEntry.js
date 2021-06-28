@@ -4,6 +4,7 @@ import { showEntry, deleteEntry } from '../../api/entries'
 import messages from '../AutoDismissAlert/messages'
 // import Comment from './../Comment/Comments'
 import CommentForm from '../shared/CommentForm'
+import DeleteComment from '../Comment/DeleteComment'
 import { createComment } from '../../api/comments'
 
 class ShowEntry extends Component {
@@ -94,10 +95,8 @@ class ShowEntry extends Component {
   }
 
   handleDeleteComment = (event) => {
-    const { user, match, history, msgAlert } = this.props
+    const { user, match, msgAlert } = this.props
     deleteEntry(match.params.id, user)
-      .then(() => this.props.history.push('/temp')
-      this.props.history.goBack()
       .then(() => msgAlert({
         heading: 'Comment Deleted!',
         message: messages.entryDeleteSuccess,
@@ -142,7 +141,9 @@ class ShowEntry extends Component {
               {entry.comments.map((comment) => (
                 <li key={comment._id}>{comment.content}
                   {console.log('comment: ', comment._id)}
-                  <div><button onClick={this.handleDeleteComment}>Delete Comment</button></div>
+                  <div>
+                    <DeleteComment id={comment._id} user={this.props.user._id} entryId={this.props.match.params.id} />
+                  </div>
                 </li>
               ))}
             </ul>
@@ -174,3 +175,4 @@ class ShowEntry extends Component {
 export default withRouter(ShowEntry)
 
 // <li key={comment._id}><Link to={`/entries/${entry._id.comments._id}`}>{comment}</Link></li>
+// <button onClick={this.handleDeleteComment} id={comment._id}>Delete Comment</button>
