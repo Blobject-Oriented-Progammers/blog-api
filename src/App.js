@@ -82,15 +82,22 @@ class App extends Component {
             <UpdateEntry msgAlert={this.msgAlert} user={user} />
           )} />
           <Route exact path='/' render={() => (<div className ='mp'>
-            <h1 className='mp-title'> Welcome to Blob-ject Oriented Programmers Project! </h1>
-            <h3 className='mp-crew-title'> The Crew </h3>
-            <ul className='mp-crew'>
-              <li className='mp-members'> Scrum Master - Nabila Ayaba! </li>
-              <li className='mp-members'> Front End Lead - JT Shepherd! </li>
-              <li className='mp-members'> Back End Lead - Dylon Fleming! </li>
+            <h1 className='mp-title'>Welcome to Blob-ject Oriented Programmers Project!</h1>
+            <hr/>
+            <h3 className='mp-crew-title'>The Crew</h3>
+            <ul className='mp-crew col-sm-10 col-md-8 mx-auto mt-5'>
+              <section>
+                <li className='mp-members'> Scrum Master <br/> <img src="Nabila-pic.png"/><br/>Nabila Ayaba</li>
+              </section>
+              <section>
+                <li className='mp-members'> Front End Lead <br/> <img src="public/JT-pic.JPG"/> <br/>JT Shepherd</li>
+              </section>
+              <section>
+                <li className='mp-members'>Back End Lead<br/> <img src="public/Dylon-pic.png"/> <br/>Dylon Fleming</li>
+              </section>
             </ul>
             <p className='mp-p'>
-            Take a look at posts made already in the top right (Entries), or go ahead and sign in to make your own!
+            Take a look at the most recent posts in the top right (Entries), or go ahead and sign in to make your own!
             </p>
           </div>)}
           />
