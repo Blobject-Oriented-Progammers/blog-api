@@ -42,7 +42,6 @@ class Entries extends Component {
       color: '#fb3640'
     }
 
-    console.log('this.state.entries: ', this.state.entries)
     let entriesJsx = ''
     if (this.state.entries === null) {
       entriesJsx = <Spinner animation="border" variant="info" />
