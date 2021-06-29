@@ -68,13 +68,4 @@ class Entries extends Component {
   }
 }
 
-// () => msgAlert({
-//   heading: 'Entry Index Failed',
-//   message: 'messages.entryIndexFailure',
-//   variant: 'danger'
-// })
-
-// #e2e2e2
-// #fb3640
-
 export default Entries
