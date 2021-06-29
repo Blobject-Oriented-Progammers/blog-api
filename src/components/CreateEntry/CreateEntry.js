@@ -60,12 +60,14 @@ class EntryCreate extends Component {
 
     return (
       <Fragment>
-        <h2 style={createTitleStyle}>Create an Entry Page</h2>
-        <EntryForm
-          entry={this.state.entry}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-        />
+        <div className="row create-page">
+          <h2 style={createTitleStyle}>Create an Entry Page</h2>
+          <EntryForm
+            entry={this.state.entry}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          />
+        </div>
       </Fragment>
     )
   }
