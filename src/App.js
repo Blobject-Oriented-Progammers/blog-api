@@ -9,6 +9,10 @@ import SignUp from './components/SignUp/SignUp'
 import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
+import Entries from './components/Entries/Entries'
+import CreateEntry from './components/CreateEntry/CreateEntry'
+import ShowEntry from './components/ShowEntry/ShowEntry'
+import UpdateEntry from './components/UpdateEntry/UpdateEntry'
 
 class App extends Component {
   constructor (props) {
@@ -65,6 +69,38 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
+          <Route exact path='/entries' render={() => (
+            <Entries msgAlert={this.msgAlert} />
+          )} />
+          <AuthenticatedRoute user={user} path='/create-entry' render={() => (
+            <CreateEntry msgAlert={this.msgAlert} user={user} />
+          )} />
+          <Route exact path='/entries/:id' user={user} render={() => (
+            <ShowEntry msgAlert={this.msgAlert} user={user}/>
+          )} />
+          <AuthenticatedRoute user={user} exact path='/entries/:id/edit' render={() => (
+            <UpdateEntry msgAlert={this.msgAlert} user={user} />
+          )} />
+          <Route exact path='/' render={() => (<div id='mp'>
+            <h1 className='mp-title'>Welcome to Fumblr</h1>
+            <hr/>
+            <h3 className='mp-crew-title'>The Development Crew</h3>
+            <ul className='mp-crew col-sm-10 col-md-8 mx-auto mt-5'>
+              <section>
+                <li className='mp-members'> Scrum Master <br/> <img className="crew-img" src="Nabila-pic.png"/><br/>Nabila Ayaba</li>
+              </section>
+              <section>
+                <li className='mp-members'> Front End Lead <br/> <img className="crew-img" src="JT-pic.JPG"/> <br/>JT Shepherd</li>
+              </section>
+              <section>
+                <li className='mp-members'>Back End Lead<br/> <img className="crew-img" src="Dylon-pic.png"/> <br/>Dylon Fleming</li>
+              </section>
+            </ul>
+            <p className='mp-p'>
+            Take a look at the most recent posts in the top right (Entries), or go ahead and sign in to make your own!
+            </p>
+          </div>)}
+          />
         </main>
       </Fragment>
     )

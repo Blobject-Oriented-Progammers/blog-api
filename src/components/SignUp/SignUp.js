@@ -49,10 +49,17 @@ class SignUp extends Component {
   render () {
     const { email, password, passwordConfirmation } = this.state
 
+    const signUpTitleStyle = {
+      color: 'red',
+      textAlign: 'center',
+      padding: '10px',
+      margin: '10px'
+    }
+
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Sign Up</h3>
+          <h3 style={signUpTitleStyle}>Sign Up</h3>
           <Form onSubmit={this.onSignUp}>
             <Form.Group controlId="email">
               <Form.Label>Email address</Form.Label>
@@ -87,12 +94,9 @@ class SignUp extends Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
-            <Button
-              variant="primary"
-              type="submit"
-            >
-              Submit
-            </Button>
+            <div className='signUpButton'>
+              <Button variant="primary" type="submit">Submit</Button>
+            </div>
           </Form>
         </div>
       </div>
