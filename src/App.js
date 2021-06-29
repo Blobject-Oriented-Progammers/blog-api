@@ -81,7 +81,7 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/entries/:id/edit' render={() => (
             <UpdateEntry msgAlert={this.msgAlert} user={user} />
           )} />
-          <Route exact path='/' render={() => (<div className ='mp'>
+          <Route exact path='/' render={() => (<div id='mp'>
             <h1 className='mp-title'>Welcome to Fumblr</h1>
             <hr/>
             <h3 className='mp-crew-title'>The Development Crew</h3>

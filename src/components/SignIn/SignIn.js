@@ -49,9 +49,7 @@ class SignIn extends Component {
 
     const signInTitleStyle = {
       color: 'red',
-      textAlign: 'center',
-      padding: '10px',
-      margin: '10px'
+      textAlign: 'center'
     }
 
     return (

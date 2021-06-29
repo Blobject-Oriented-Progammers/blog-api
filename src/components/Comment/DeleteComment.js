@@ -18,7 +18,7 @@ class DeleteComment extends Component {
     render () {
       return (
         <Fragment>
-          <div className='deleteComment'><button onClick={this.handleDelete}>Delete Comment</button></div>
+          <div className='deleteComment'><button onClick={this.handleDelete}><img className="delete-img" src="delete-24.png"/></button></div>
         </Fragment>
       )
     }

@@ -113,8 +113,21 @@ class ShowEntry extends Component {
       entryJsx = (
         <Fragment>
           <div className='showPostComment'>
-            <h3>{entry.title}</h3>
-            <p>{entry.text}</p>
+            <div className='row showPostComment'>
+              <h3>{entry.title}</h3>
+              <p className='showPostCommentEntry'>{entry.text}</p>
+              <hr/>
+              <p className='showPostCommentSection'>Comments:</p>
+              <ul >
+                {entry.comments.map((comment) => (
+                  <li className='showPostCommentList' key={comment._id}>
+                    <div className='showPostCommentListContent'>
+                      {comment.content}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
             {/* add a user ex; written by: entry.author */}
             {/* <p>Directed by: {entry.director}</p> */}
           </div>
@@ -127,13 +140,15 @@ class ShowEntry extends Component {
       entryJsx = (
 
         <Fragment>
-          <div className='showPostComment'>
+          <div className='row showPostComment'>
             <h3>{entry.title}</h3>
-            <p>{entry.text}</p>
-            <p>Comments:</p>
-            <ul>
+            <p className='showPostCommentEntry'>{entry.text}</p>
+            <hr/>
+            <p className='showPostCommentSection'>Comments:</p>
+            <ul >
               {entry.comments.map((comment) => (
-                <li key={comment._id}>{comment.content}
+                <li className='showPostCommentList' key={comment._id}>
+                  <div className='showPostCommentListContent'>{comment.content}</div>
                   <div>
                     <DeleteComment id={comment._id} user={this.props.user._id} entryId={this.props.match.params.id} />
                   </div>

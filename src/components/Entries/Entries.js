@@ -59,9 +59,10 @@ class Entries extends Component {
 
     return (
       <Fragment>
-        <h2 style={entryTitleStyle}>All Entries</h2>
-        {entriesJsx}
-
+        <div className="entries-pg">
+          <h2 style={entryTitleStyle}>All Entries</h2>
+          {entriesJsx}
+        </div>
       </Fragment>
     )
   }
