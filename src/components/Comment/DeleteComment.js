@@ -12,13 +12,14 @@ class DeleteComment extends Component {
       deleteComment(entryId, id, user)
         .then((res) => res)
         .catch(console.error)
-        .finally(() => history.push('/'))
+        .finally(() => history.push('/temp'))
+        .finally(() => history.goBack())
     }
 
     render () {
       return (
         <Fragment>
-          <div className='deleteComment'><button onClick={this.handleDelete}><img className="delete-img" src="delete-24.png"/></button></div>
+          <div className='deleteComment'><button onClick={this.handleDelete}>Delete Comment</button></div>
         </Fragment>
       )
     }
