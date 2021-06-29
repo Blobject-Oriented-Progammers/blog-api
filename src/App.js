@@ -97,7 +97,7 @@ class App extends Component {
               </section>
             </ul>
             <p className='mp-p'>
-            Welcome to our Blog Page, Fumblr! This social media site allows you to create blog posts and comment on other posts as well! The development crew consists of: Nabila, the project Scrum Master; JT, the project Front-End Lead; and Dylon, the Back-End Lead.
+            Welcome to our Blog Page, Fumblr! This social media site allows you to create blog posts and comment on other posts as well! The development crew consists of: <br/> Nabila, the project Scrum Master; JT, the project Front-End Lead; and Dylon, the project Back-End Lead.
             </p>
             <p className='mp-p'>
             Take a look at the most recent posts in the top right (Entries), or go ahead and sign in to make your own!
