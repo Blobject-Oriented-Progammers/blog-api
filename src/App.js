@@ -82,9 +82,9 @@ class App extends Component {
             <UpdateEntry msgAlert={this.msgAlert} user={user} />
           )} />
           <Route exact path='/' render={() => (<div className ='mp'>
-            <h1 className='mp-title'>Welcome to Blob-ject Oriented Programmers Project!</h1>
+            <h1 className='mp-title'>Welcome to Fumblr</h1>
             <hr/>
-            <h3 className='mp-crew-title'>The Crew</h3>
+            <h3 className='mp-crew-title'>The Development Crew</h3>
             <ul className='mp-crew col-sm-10 col-md-8 mx-auto mt-5'>
               <section>
                 <li className='mp-members'> Scrum Master <br/> <img className="crew-img" src="Nabila-pic.png"/><br/>Nabila Ayaba</li>
