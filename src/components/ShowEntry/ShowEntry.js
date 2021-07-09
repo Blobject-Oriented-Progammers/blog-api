@@ -150,7 +150,7 @@ class ShowEntry extends Component {
                 <li className='showPostCommentList' key={comment._id}>
                   <div className='showPostCommentListContent'>{comment.content}</div>
                   <div>
-                    <DeleteComment id={comment._id} user={this.props.user._id} entryId={this.props.match.params.id} />
+                    <DeleteComment id={comment._id} user={this.props.user} entryId={this.props.match.params.id} />
                   </div>
                 </li>
               ))}
