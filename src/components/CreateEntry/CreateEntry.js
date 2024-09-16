@@ -19,7 +19,6 @@ class EntryCreate extends Component {
 
   handleChange = (event) => {
     const updatedField = { [event.target.name]: event.target.value }
-    console.log('updatedField in createEntry handleChange: ', updatedField)
     this.setState((currentState) => {
       return { entry: {
         ...currentState.entry,
@@ -33,7 +32,6 @@ class EntryCreate extends Component {
 
     const { msgAlert, user } = this.props
     const entry = { ...this.state.entry, owner: user._id }
-    console.log('this.props, createEntry: ', this.props)
     createEntry(entry, user)
       .then(res => this.setState({ createdId: res.data.entry._id }))
       .then(() => msgAlert({
@@ -53,9 +51,16 @@ class EntryCreate extends Component {
       return <Redirect to={`/entries/${this.state.createdId}`}/>
     }
 
+    const createTitleStyle = {
+      color: 'red',
+      textAlign: 'center',
+      padding: '10px',
+      margin: '10px'
+    }
+
     return (
       <Fragment>
-        <h2>Create an Entry Page</h2>
+        <h2 style={createTitleStyle}>Create an Entry Page</h2>
         <EntryForm
           entry={this.state.entry}
           handleChange={this.handleChange}

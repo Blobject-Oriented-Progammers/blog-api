@@ -1,1 +1,106 @@
 @import '~bootstrap/scss/bootstrap';
+
+
+html {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+ul {
+  padding: 0;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+}
+
+hr {
+  background-color: white;
+  width: 75%;
+}
+
+.crew-img {
+  height: 200px;
+}
+
+.bg-primary {
+  background-color: #605F5E !important;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+body {
+  background-color: white;
+}
+
+a {
+  color: black;
+  padding: 10px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.form-group {
+  margin: 30px 0 30px 0;
+}
+
+.signUpButton, .signInButton, .createButton{
+  display: flex;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: #2D50A2;
+}
+
+.mp {
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  background-color: #e2e2e2;
+  max-width: 2000px;
+  min-height: 100%;
+  width: 75%;
+  padding: 56px 0 0 0;
+}
+
+.container .mp {
+  background-color: #6798ad;
+  height: 100vh;
+  width: 100%;
+}
+
+.mp-crew-title {
+  margin-top: 10px;
+}
+
+.mp-crew {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin: 100px;
+  list-style-type: none;
+}
+
+.showPostComment {
+  text-align: center;
+  color: black;
+  background-color: white;
+  padding: 18px 50px 92px 50px;
+  margin: 0px 90px 50px 90px;
+  list-style-type: none;
+  border-radius: 2.5em;
+}
+
+.deleteComment {
+  float: left;
+}
+// #e2e2e2
+// #fb3640

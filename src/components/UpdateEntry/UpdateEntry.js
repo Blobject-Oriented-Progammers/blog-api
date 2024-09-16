@@ -34,7 +34,6 @@ class EntryUpdate extends Component {
   }
   handleChange = (event) => {
     const updatedField = { [event.target.name]: event.target.value }
-    console.log('updatedField in updateEntry handleChange: ', updatedField)
     this.setState((currentState) => {
       return { entry: {
         ...currentState.entry,
@@ -46,9 +45,6 @@ class EntryUpdate extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     const { msgAlert, user, match, history } = this.props
-    console.log('in updateEntry, match.params: ', match.params)
-    console.log('in updateEntry, this.state.entry: ', this.state.entry)
-    console.log('in updateEntry, user: ', user)
     updateEntry(this.state.entry, match.params.id, user)
       .then(res => history.push(`/entries/${match.params.id}`))
       .then(() => msgAlert({
@@ -63,7 +59,6 @@ class EntryUpdate extends Component {
       }))
   }
   render () {
-    console.log('this.state.entry in updateEntry: ', this.state.entry)
     return (
       <Fragment>
         <h2>Update a Entry Page</h2>
